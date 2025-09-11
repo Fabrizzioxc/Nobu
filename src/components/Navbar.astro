@@ -1,0 +1,142 @@
+---
+const links = [
+  { href: "/#features", label: "Características" },
+  { href: "/#solution", label: "Solución" },
+  { href: "/#demo", label: "Demo" },
+];
+import MobileMenu from "./MobileMenu";
+---
+
+<!-- Shell fijo con shrink al hacer scroll -->
+<div id="nav-shell"
+     class="group pointer-events-none fixed inset-x-0 top-3 z-50 transition-all duration-500 ease-out
+            [--mx:1rem] sm:[--mx:1.25rem]">
+  <div class="pointer-events-auto mx-auto
+              w-[min(100%-var(--mx)*2,76rem)]
+              transition-all duration-500 ease-out
+              group-data-[shrink=true]:w-[min(100%-var(--mx)*2,64rem)]">
+     
+    <nav class="flex items-center justify-between gap-4
+                rounded-none px-4 py-3 sm:px-6 sm:py-3.5
+                bg-transparent ring-0 shadow-none backdrop-blur-0
+                transition-all duration-500 ease-out
+                group-data-[shrink=true]:rounded-xl
+                group-data-[shrink=true]:py-2.5
+                group-data-[shrink=true]:bg-black/40
+                group-data-[shrink=true]:backdrop-blur-xl
+                group-data-[shrink=true]:shadow-[0_8px_40px_rgba(0,0,0,.65)]">
+      
+      <!-- Brand -->
+      <a href="/" class="flex items-center gap-2 nav-link" data-section="hero">
+        <img src="/nobulogo.svg" alt="Nobu" class="h-12 w-12 rounded-lg" />
+        <span class="hidden sm:block font-medium text-2xl tracking-tight text-white">Nobu</span>
+      </a>
+
+      <!-- Links desktop -->
+      <ul class="hidden md:flex items-center gap-10 text-base text-white/80">
+        {links.map((l) => (
+          <li>
+            <a 
+              href={l.href} 
+              class="hover:text-white transition-colors nav-link"
+              data-section={l.href.replace('/#', '')}
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA desktop -->
+      <div class="hidden md:flex items-center">
+        <a
+          href="/#demo"
+          class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-base font-medium
+                 bg-[var(--brand)] [background-image:none] text-white shadow-none
+                 transition hover:[filter:brightness(1.07)] active:[filter:brightness(.98)]
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 nav-link"
+          data-section="demo"
+        >
+          Solicitar Demo
+        </a>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="md:hidden">
+        <MobileMenu client:load />
+      </div>
+    </nav>
+  </div>
+
+  <script is:inline>
+    // Encoger navbar en scroll
+    const shell = document.getElementById('nav-shell');
+    const toggle = () => {
+      const shrink = window.scrollY > 8;
+      shell?.setAttribute('data-shrink', shrink ? 'true' : 'false');
+    };
+    toggle();
+    window.addEventListener('scroll', toggle, { passive: true });
+
+    // Manejar navegación de enlaces (incluyendo Brand)
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          const section = link.getAttribute('data-section');
+          
+          // Caso especial para Brand (ir al hero)
+          if (section === 'hero') {
+            // Si ya estamos en la página principal, scroll al top
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+              history.pushState(null, '', '/');
+              return;
+            }
+            // Si estamos en otra página, ir a la principal
+            return;
+          }
+          
+          // Si ya estamos en la página principal
+          if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            // Comportamiento normal de hash para scroll suave
+            return;
+          }
+          
+          // Si estamos en otra página, ir a la principal y luego al hash
+          e.preventDefault();
+          window.location.href = href;
+        });
+      });
+    });
+
+    // Scroll suave para enlaces internos (cuando ya estás en la página principal)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="/#"]');
+      if (!link) return;
+      
+      const href = link.getAttribute('href');
+      const hash = href.substring(1); // Quitar el /
+      
+      // Solo si estamos en la página principal
+      if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Actualizar URL sin recargar
+          history.pushState(null, '', href);
+        }
+      }
+    });
+  </script>
+</div>
