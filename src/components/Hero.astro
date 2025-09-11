@@ -1,9 +1,17 @@
 ---
 // Hero.astro — Nobu
-// Hero minimalista: fondo sólido, título, párrafo y botón.
+// Hero minimalista con fondo sólido + radial suave usando variables CSS definidas en global.css.
 ---
 
-<section class="relative flex min-h-screen items-center justify-center bg-[#0D0D0D] px-4 py-24 sm:py-28 md:py-32 text-center">
+<section class="relative flex min-h-screen items-center justify-center bg-bg px-4 text-center">
+  <!-- Fondo radial sutil -->
+  <div aria-hidden class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-1/2 top-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+      style="background: radial-gradient(circle, rgba(30,58,138,0.35) 0%, rgba(13,13,13,0) 70%);"
+    />
+  </div>
+
   <div class="mx-auto flex max-w-3xl flex-col items-center">
     <h1 class="font-heading text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl">
       Nobu
@@ -14,7 +22,8 @@
     <div class="mt-8">
       <a
         href="#contacto"
-        class="inline-flex items-center gap-2 rounded-2xl bg-blue-500 px-6 py-3 text-base font-semibold text-[#0D0D0D] shadow-lg transition hover:bg-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+        class="inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-base font-semibold text-bg shadow-lg transition focus-visible:outline-none focus-visible:ring-2"
+        style="background: var(--color-primary); color: var(--color-bg);"
       >
         Contáctanos
       </a>
