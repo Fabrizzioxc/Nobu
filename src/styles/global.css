@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+/* Variables globales */
+:root {
+  --color-bg: #0D0D0D;
+  --color-primary: #6EAEFE;
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* Estilos base */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+.btn:hover {
+  background: #5599e8; /* un poco más oscuro */
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
