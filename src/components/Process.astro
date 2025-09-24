@@ -1,0 +1,71 @@
+---
+// src/components/Proceso.astro
+---
+
+<section id="proceso" class="relative bg-bg px-6 py-20 md:px-16 lg:px-24 text-white">
+  <!-- Fondo radial -->
+  <div aria-hidden class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-1/2 top-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+      style="background: radial-gradient(circle, rgba(30,58,138,0.25) 0%, rgba(13,13,13,0) 70%);"
+    />
+  </div>
+
+  <!-- Encabezado -->
+  <div class="text-center mb-16">
+    <span class="bg-white/10 text-xs px-4 py-1 rounded-full uppercase tracking-wide">
+      Proceso
+    </span>
+    <h2 class="mt-6 text-3xl md:text-4xl font-bold">
+      De la idea a la realidad
+    </h2>
+  </div>
+
+  <!-- Pasos -->
+  <div class="grid gap-8 md:grid-cols-4">
+    <!-- Paso 1 -->
+    <div class="rounded-xl border border-white/20 bg-white/5 p-6 text-center hover:border-white/40 transition">
+      <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg"
+        style="background: var(--color-primary);">
+        📄
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Brief</h3>
+      <p class="text-white/70 text-sm">
+        Entendemos tus necesidades y objetivos para definir la mejor estrategia digital.
+      </p>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+        ✏️
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Diseño</h3>
+      <p class="text-white/70 text-sm">
+        Transformamos tus ideas en un diseño atractivo, moderno y funcional, alineado a tu marca.
+      </p>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+        💻
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Desarrollo</h3>
+      <p class="text-white/70 text-sm">
+        Construimos tu sitio web con tecnología avanzada, garantizando rendimiento y calidad.
+      </p>
+    </div>
+
+    <!-- Paso 4 -->
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+        🚀
+      </div>
+      <h3 class="font-semibold text-lg mb-2">Entrega</h3>
+      <p class="text-white/70 text-sm">
+        Lanzamos tu web lista para destacar, asegurando una experiencia confiable y profesional.
+      </p>
+    </div>
+  </div>
+</section>
