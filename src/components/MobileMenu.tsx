@@ -90,7 +90,7 @@ export default function MobileMenu() {
               onClick={() => handleLinkClick("/#demo")}
               className="flex items-center justify-center w-full rounded-full px-5 py-3 text-base font-medium bg-[var(--brand)] text-white transition-all duration-200 hover:brightness-110 active:scale-[0.98] shadow-[0_8px_30px_rgba(235,104,28,.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             >
-              Solicitar Prueba Gratis
+              Solicitar Prueba Totalmente Gratis
               <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
