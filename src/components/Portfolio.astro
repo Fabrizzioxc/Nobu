@@ -1,0 +1,81 @@
+---
+// src/components/Portfolio.astro
+---
+
+<section id="portfolio" class="relative bg-bg px-6 py-20 md:px-16 lg:px-24 text-white">
+  <!-- Fondo radial -->
+  <div aria-hidden class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-1/2 top-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+      style="background: radial-gradient(circle, rgba(30,58,138,0.25) 0%, rgba(13,13,13,0) 70%);"
+    />
+  </div>
+
+  <!-- Encabezado -->
+  <div class="text-center mb-16">
+    <span class="bg-white/10 text-xs px-4 py-1 rounded-full uppercase tracking-wide">
+      Portfolio
+    </span>
+    <h2 class="mt-6 text-3xl md:text-4xl font-bold">
+      Explora nuestras <br />
+      soluciones exitosas
+    </h2>
+  </div>
+
+  <!-- Grid de proyectos -->
+  <div class="grid gap-10 md:grid-cols-2">
+    <!-- Proyecto 1 -->
+    <div class="rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/30 transition">
+      <div class="aspect-video bg-black">
+        <img
+          src="/images/proyecto1.png"
+          alt="Rediseño de Marca"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="font-semibold text-lg">Rediseño de Marca</h3>
+        <p class="text-white/70 text-sm">
+          Transformamos la identidad visual de una empresa emergente.
+        </p>
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Diseño Gráfico</span>
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Marca Moderna</span>
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Identidad Visual</span>
+        </div>
+        <!-- CTA -->
+        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:underline">
+          Ver proyecto →
+        </a>
+      </div>
+    </div>
+
+    <!-- Proyecto 2 -->
+    <div class="rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/30 transition">
+      <div class="aspect-video bg-black">
+        <img
+          src="/images/proyecto2.png"
+          alt="E-commerce Innovador"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="font-semibold text-lg">E-commerce Innovador</h3>
+        <p class="text-white/70 text-sm">
+          Desarrollamos una plataforma de ventas en línea para un cliente destacado.
+        </p>
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Aplicación Web</span>
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Soluciones Digitales</span>
+          <span class="bg-blue-600/80 text-xs px-3 py-1 rounded-full">Plataforma Interactiva</span>
+        </div>
+        <!-- CTA -->
+        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:underline">
+          Ver proyecto →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
