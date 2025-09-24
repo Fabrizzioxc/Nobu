@@ -1,0 +1,80 @@
+---
+// src/components/Nosotros.astro
+---
+
+<section id="nosotros" class="relative bg-bg px-6 py-20 md:px-16 lg:px-24 text-white">
+  <!-- Fondo radial sutil -->
+  <div aria-hidden class="absolute inset-0 -z-10">
+    <div
+      class="absolute left-1/2 top-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+      style="background: radial-gradient(circle, rgba(30,58,138,0.25) 0%, rgba(13,13,13,0) 70%);"
+    />
+  </div>
+
+  <!-- Valores -->
+  <div class="grid gap-6 md:grid-cols-3 mb-16">
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="text-lg font-semibold mb-2 flex items-center justify-center gap-2">
+        ✨ <span>Calidad</span>
+      </div>
+      <p class="text-white/70 text-sm">
+        Resultados profesionales en cada proyecto.
+      </p>
+    </div>
+
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="text-lg font-semibold mb-2 flex items-center justify-center gap-2">
+        ⚙️ <span>Personalización</span>
+      </div>
+      <p class="text-white/70 text-sm">
+        Soluciones únicas para cada cliente según sus requerimientos.
+      </p>
+    </div>
+
+    <div class="rounded-xl border border-white/10 p-6 text-center hover:border-white/30 transition">
+      <div class="text-lg font-semibold mb-2 flex items-center justify-center gap-2">
+        🛡️ <span>Confianza</span>
+      </div>
+      <p class="text-white/70 text-sm">
+        Transparencia y compromiso en todo momento.
+      </p>
+    </div>
+  </div>
+
+  <!-- Encabezado -->
+  <div class="text-center mb-12">
+    <span class="bg-white/10 text-xs px-4 py-1 rounded-full uppercase tracking-wide">
+      Nosotros
+    </span>
+    <h2 class="mt-6 text-3xl md:text-4xl font-bold">
+      Impulsamos tu presencia <br />
+      digital con <span style="color: var(--color-primary)">confianza.</span>
+    </h2>
+  </div>
+
+  <!-- Contenido -->
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- Mockup / Imagen -->
+    <div class="bg-white/5 rounded-xl h-64 flex items-center justify-center border border-white/10">
+      <p class="text-white/30">[Aquí podría ir un mockup]</p>
+    </div>
+
+    <!-- Texto -->
+    <div class="space-y-4 text-white/80 leading-relaxed">
+      <p>
+        Nobu nace con el propósito de ayudar a 
+        <span style="color: var(--color-primary)" class="font-medium">
+          negocios, emprendedores y profesionales
+        </span> 
+        a tener la <span class="text-white font-semibold">presencia digital</span> que necesitan.
+      </p>
+      <p>
+        No solo construimos <span class="text-white font-semibold">páginas web</span>: 
+        creamos <span style="color: var(--color-primary)" class="font-medium">
+          experiencias claras, modernas y profesionales
+        </span> 
+        que generan confianza y credibilidad.
+      </p>
+    </div>
+  </div>
+</section>
